@@ -24,7 +24,6 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body
-        style={{backgroundImage: `url('/BackgroundBlur.png')`, height: "100%", width: "100%", backgroundPosition: "bottom", backgroundSize: "cover"}} 
         className={cn(
           "min-h-screen bg-background font-sans antialiased"
         )}

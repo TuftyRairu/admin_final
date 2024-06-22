@@ -14,7 +14,7 @@ const staat = Staatliches({
 
 export default function NavigationBar() {
     return (
-        <nav className="flex justify-between h-[10vh] bg-black px-5 py-3">
+        <nav className="flex justify-between h-[10vh] px-5 py-3">
                 <div className="flex">
                     <DashboardSideBar />
                     <p className={cn(staat.variable, "font-sans ml-8 my-auto text-3xl")}>Dashboard</p>
