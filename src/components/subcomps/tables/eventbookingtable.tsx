@@ -19,46 +19,32 @@ const popp = Poppins({
 
 const organizerNames = [
     {
-      organizerName: "INV001",
-      paymentStatus: "Paid",
-      totalAmount: "$250.00",
-      paymentMethod: "Credit Card",
+        organizerName: "Epic Events",
+        eventName: "Galactic Adventure Gala",
+        eventType: "Star Wars Charity Ball",
+        status: "Completed",
+        date: "June 24, 2024",
     },
     {
-      organizerName: "INV002",
-      paymentStatus: "Pending",
-      totalAmount: "$150.00",
-      paymentMethod: "PayPal",
+        organizerName: "Nostalgia Nights",
+        eventName: "Jurassic Jungle",
+        eventType: "Jurassic Park",
+        status: "Missing",
+        date: "june",
+        },
+    {
+        organizerName: "Fantasy Festivities",
+        eventName: "Narnia Winter",
+        eventType: "Chronicles of Narnia-Themed",
+        status: "Completed",
+        date: "june",
     },
     {
-      organizerName: "INV003",
-      paymentStatus: "Unpaid",
-      totalAmount: "$350.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      organizerName: "INV004",
-      paymentStatus: "Paid",
-      totalAmount: "$450.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      organizerName: "INV005",
-      paymentStatus: "Paid",
-      totalAmount: "$550.00",
-      paymentMethod: "PayPal",
-    },
-    {
-      organizerName: "INV006",
-      paymentStatus: "Pending",
-      totalAmount: "$200.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      organizerName: "INV007",
-      paymentStatus: "Unpaid",
-      totalAmount: "$300.00",
-      paymentMethod: "Credit Card",
+        organizerName: "Spellbound Events",
+        eventName: "Diagon Alley Experience",
+        eventType: "Harry Potter Dining Event",
+        status: "Completed",
+        date: "june",
     },
   ]
 
@@ -106,9 +92,7 @@ export default function EventBookingTable() {
             ))}
             <Tabs defaultValue="all" className={cn(popp.variable,"font-sans")}>
                 <TabsList className="border-0 bg-transparent">
-                    <TabsTrigger className="bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="all">All</TabsTrigger>
-                    <TabsTrigger className="ml-3 bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="published">Published</TabsTrigger>
-                    <TabsTrigger className="ml-3 bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="draft">Draft</TabsTrigger>
+                    <TabsTrigger className="bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="all">List Events</TabsTrigger>
                 </TabsList>
                 <TabsContent value="all">
                     <Table>
@@ -119,6 +103,7 @@ export default function EventBookingTable() {
                             <TableHead>Event Type</TableHead>
                             <TableHead>Status</TableHead>
                             <TableHead>Date</TableHead>
+                            <TableHead>Actions</TableHead>
                             <TableHead> </TableHead>
                             </TableRow>
                         </TableHeader>
@@ -126,63 +111,13 @@ export default function EventBookingTable() {
                             {organizerNames.map((organizerName) => (
                             <TableRow key={organizerName.organizerName}>
                                 <TableCell className="font-medium">{organizerName.organizerName}</TableCell>
-                                <TableCell>{organizerName.paymentStatus}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell className="text-right">{organizerName.totalAmount}</TableCell>
-                            </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TabsContent>
-                <TabsContent value="published">
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                            <TableHead className="w-[300px]">Organizer Name</TableHead>
-                            <TableHead>Event Name</TableHead>
-                            <TableHead>Event Type</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead>Date</TableHead>
-                            <TableHead> </TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {organizerNames.map((organizerName) => (
-                            <TableRow key={organizerName.organizerName}>
-                                <TableCell className="font-medium">{organizerName.organizerName}</TableCell>
-                                <TableCell>{organizerName.paymentStatus}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell className="text-right">{organizerName.totalAmount}</TableCell>
-                            </TableRow>
-                            ))}
-                        </TableBody>
-                    </Table>
-                </TabsContent>
-                <TabsContent value="draft">
-                    <Table>
-                        <TableHeader>
-                            <TableRow>
-                            <TableHead className="w-[300px]">Organizer Name</TableHead>
-                            <TableHead>Event Name</TableHead>
-                            <TableHead>Event Type</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead>Date</TableHead>
-                            <TableHead> </TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            {organizerNames.map((organizerName) => (
-                            <TableRow key={organizerName.organizerName}>
-                                <TableCell className="font-medium">{organizerName.organizerName}</TableCell>
-                                <TableCell>{organizerName.paymentStatus}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell className="text-right">{organizerName.totalAmount}</TableCell>
+                                <TableCell>{organizerName.eventName}</TableCell>
+                                <TableCell>{organizerName.eventType}</TableCell>
+                                <TableCell>{organizerName.status}</TableCell>
+                                <TableCell>{organizerName.date}</TableCell>
+                                <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
+                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
+                                <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
                             </TableRow>
                             ))}
                         </TableBody>

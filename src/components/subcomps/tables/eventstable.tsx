@@ -19,46 +19,25 @@ const popp = Poppins({
 
 const organizerNames = [
     {
-      organizerName: "INV001",
-      paymentStatus: "Paid",
-      totalAmount: "$250.00",
-      paymentMethod: "Credit Card",
+      organizerName: "Enchanted Gatherings",
+      eventName: "Hogwarts House",
+      eventType: "Themed Dinner and Dance",
+      status: "Completed",
+      date: "June 24, 2024",
     },
     {
-      organizerName: "INV002",
-      paymentStatus: "Pending",
-      totalAmount: "$150.00",
-      paymentMethod: "PayPal",
+      organizerName: "CineMagic Events",
+      eventName: "Wizarding World Fair",
+      eventType: "Fair and Market",
+      status: "Missing",
+      date: "june",
     },
     {
-      organizerName: "INV003",
-      paymentStatus: "Unpaid",
-      totalAmount: "$350.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      organizerName: "INV004",
-      paymentStatus: "Paid",
-      totalAmount: "$450.00",
-      paymentMethod: "Credit Card",
-    },
-    {
-      organizerName: "INV005",
-      paymentStatus: "Paid",
-      totalAmount: "$550.00",
-      paymentMethod: "PayPal",
-    },
-    {
-      organizerName: "INV006",
-      paymentStatus: "Pending",
-      totalAmount: "$200.00",
-      paymentMethod: "Bank Transfer",
-    },
-    {
-      organizerName: "INV007",
-      paymentStatus: "Unpaid",
-      totalAmount: "$300.00",
-      paymentMethod: "Credit Card",
+      organizerName: "Fantasia Creations",
+      eventName: "Night at the Shire",
+      eventType: "Lord of the Rings",
+      status: "Completed",
+      date: "june",
     },
   ]
 
@@ -119,6 +98,7 @@ export default function EventsTable() {
                             <TableHead>Event Type</TableHead>
                             <TableHead>Status</TableHead>
                             <TableHead>Date</TableHead>
+                            <TableHead>Actions</TableHead>
                             <TableHead> </TableHead>
                             </TableRow>
                         </TableHeader>
@@ -126,11 +106,13 @@ export default function EventsTable() {
                             {organizerNames.map((organizerName) => (
                             <TableRow key={organizerName.organizerName}>
                                 <TableCell className="font-medium">{organizerName.organizerName}</TableCell>
-                                <TableCell>{organizerName.paymentStatus}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell className="text-right">{organizerName.totalAmount}</TableCell>
+                                <TableCell>{organizerName.eventName}</TableCell>
+                                <TableCell>{organizerName.eventType}</TableCell>
+                                <TableCell>{organizerName.status}</TableCell>
+                                <TableCell>{organizerName.date}</TableCell>
+                                <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
+                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
+                                <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
                             </TableRow>
                             ))}
                         </TableBody>
@@ -152,11 +134,13 @@ export default function EventsTable() {
                             {organizerNames.map((organizerName) => (
                             <TableRow key={organizerName.organizerName}>
                                 <TableCell className="font-medium">{organizerName.organizerName}</TableCell>
-                                <TableCell>{organizerName.paymentStatus}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell className="text-right">{organizerName.totalAmount}</TableCell>
+                                <TableCell>{organizerName.eventName}</TableCell>
+                                <TableCell>{organizerName.eventType}</TableCell>
+                                <TableCell>{organizerName.status}</TableCell>
+                                <TableCell>{organizerName.date}</TableCell>
+                                <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
+                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
+                                <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
                             </TableRow>
                             ))}
                         </TableBody>
@@ -175,14 +159,16 @@ export default function EventsTable() {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            {organizerNames.map((organizerName) => (
+                        {organizerNames.map((organizerName) => (
                             <TableRow key={organizerName.organizerName}>
                                 <TableCell className="font-medium">{organizerName.organizerName}</TableCell>
-                                <TableCell>{organizerName.paymentStatus}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell>{organizerName.paymentMethod}</TableCell>
-                                <TableCell className="text-right">{organizerName.totalAmount}</TableCell>
+                                <TableCell>{organizerName.eventName}</TableCell>
+                                <TableCell>{organizerName.eventType}</TableCell>
+                                <TableCell>{organizerName.status}</TableCell>
+                                <TableCell>{organizerName.date}</TableCell>
+                                <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
+                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
+                                <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
                             </TableRow>
                             ))}
                         </TableBody>
