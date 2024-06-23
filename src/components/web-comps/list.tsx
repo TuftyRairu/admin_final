@@ -109,7 +109,7 @@ export default function EventList() {
                         <Table>
                             <TableHeader>
                                 <TableRow>
-                                <TableHead className="w-[100px]">Organizer Name</TableHead>
+                                <TableHead className="w-[300px]">Organizer Name</TableHead>
                                 <TableHead>Event Name</TableHead>
                                 <TableHead>Event Type</TableHead>
                                 <TableHead>Status</TableHead>
@@ -177,7 +177,30 @@ export default function EventList() {
                         <TabsTrigger className="ml-3 bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="draft">Draft</TabsTrigger>
                     </TabsList>
                     <TabsContent value="all">
-                        Make changes to your account here.
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                <TableHead className="w-[300px]">Organizer Name</TableHead>
+                                <TableHead>Event Name</TableHead>
+                                <TableHead>Event Type</TableHead>
+                                <TableHead>Status</TableHead>
+                                <TableHead>Date</TableHead>
+                                <TableHead> </TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {invoices.map((invoice) => (
+                                <TableRow key={invoice.invoice}>
+                                    <TableCell className="font-medium">{invoice.invoice}</TableCell>
+                                    <TableCell>{invoice.paymentStatus}</TableCell>
+                                    <TableCell>{invoice.paymentMethod}</TableCell>
+                                    <TableCell>{invoice.paymentMethod}</TableCell>
+                                    <TableCell>{invoice.paymentMethod}</TableCell>
+                                    <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+                                </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
                     </TabsContent>
                     <TabsContent value="published">
                         Change your password here.
