@@ -18,6 +18,8 @@ import {
     SheetOverlay,
     SheetPortal
   } from "@/components/ui/sheet";
+import { useState } from "react";
+import { usePathname } from 'next/navigation';
 
 const staat = Staatliches({
     subsets: ['latin'],
@@ -25,7 +27,8 @@ const staat = Staatliches({
     weight: "400",
 })
 
-export default function DashboardSideBar() {
+export default function SideBar() {
+    const router = usePathname();
     return (
         <Sheet>
             <SheetTrigger className="cursor-pointer" asChild>
@@ -47,8 +50,8 @@ export default function DashboardSideBar() {
                 </SheetDescription>
             </SheetHeader>
             <div className="flex flex-col py-12 pr-12">
-                <Link href={"/dashboard"} className="flex rounded-md bg-yellow-500 px-5 py-3 mb-4 text-black hover:bg-white"><LayoutDashboard /><p className="ml-3">Dashboard</p></Link>
-                <Link href={"/dashboard"} className="flex rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black"><Calendar /><p className="ml-3">Schedule</p></Link>
+                <Link href={"/dashboard"} className={`flex rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black  ${router === '/dashboard' ? 'bg-yellow-500' : ''}`}><LayoutDashboard /><p className="ml-3">Dashboard</p></Link>
+                <Link href={"/events"} className={`flex rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black ${router === '/events' ? 'bg-yellow-500' : ''}`}><Calendar /><p className="ml-3">Events</p></Link>
                 <Link href={"/dashboard"} className="rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black">Schedule</Link>
                 <Link href={"/dashboard"} className="rounded-md px-5 py-3 text-white hover:bg-white hover:text-black">Schedule</Link>
             </div>

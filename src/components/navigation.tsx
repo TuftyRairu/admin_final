@@ -1,4 +1,4 @@
-import DashboardSideBar from "@/components/sidebar/dashboardsidebar";
+import SideBar from "@/components/subcomps/sidebar";
 import Link from "next/link";
 import { Bell, Mail } from "lucide-react";
 import { Staatliches } from "next/font/google";
@@ -12,12 +12,12 @@ const staat = Staatliches({
     weight: "400",
 })
 
-export default function NavigationBar() {
+export default function NavigationBar(props: any) {
     return (
-        <nav className="flex justify-between h-[10vh] bg-black px-5 py-3">
+        <nav className="flex justify-between h-[10vh] px-5 py-3">
                 <div className="flex">
-                    <DashboardSideBar />
-                    <p className={cn(staat.variable, "font-sans ml-8 my-auto text-3xl")}>Dashboard</p>
+                    <SideBar />
+                    <p className={cn(staat.variable, "font-sans ml-8 my-auto text-3xl")}>{props.title}</p>
                 </div>
 
                 <div className="flex my-auto">
