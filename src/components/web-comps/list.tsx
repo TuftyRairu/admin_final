@@ -1,4 +1,13 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "@/components/ui/table"
 import { Poppins } from "next/font/google";
 
 import { cn } from "@/lib/utils"
@@ -9,7 +18,54 @@ const popp = Poppins({
     weight: "600",
 })
 
+const invoices = [
+    {
+      invoice: "INV001",
+      paymentStatus: "Paid",
+      totalAmount: "$250.00",
+      paymentMethod: "Credit Card",
+    },
+    {
+      invoice: "INV002",
+      paymentStatus: "Pending",
+      totalAmount: "$150.00",
+      paymentMethod: "PayPal",
+    },
+    {
+      invoice: "INV003",
+      paymentStatus: "Unpaid",
+      totalAmount: "$350.00",
+      paymentMethod: "Bank Transfer",
+    },
+    {
+      invoice: "INV004",
+      paymentStatus: "Paid",
+      totalAmount: "$450.00",
+      paymentMethod: "Credit Card",
+    },
+    {
+      invoice: "INV005",
+      paymentStatus: "Paid",
+      totalAmount: "$550.00",
+      paymentMethod: "PayPal",
+    },
+    {
+      invoice: "INV006",
+      paymentStatus: "Pending",
+      totalAmount: "$200.00",
+      paymentMethod: "Bank Transfer",
+    },
+    {
+      invoice: "INV007",
+      paymentStatus: "Unpaid",
+      totalAmount: "$300.00",
+      paymentMethod: "Credit Card",
+    },
+  ]
+
 export default function EventList() {
+
+
     return (
         <Tabs defaultValue="events" className={cn(popp.variable,"font-sans")}>
             <TabsList className="border-0 bg-transparent">
@@ -24,7 +80,7 @@ export default function EventList() {
                     </div>
                     <div className="flex bg-gray-200 text-black items-center border-l-5 border-green-500 px-3 py-5">
                         <p className="text-md text-center mr-2">500</p>
-                        <p className="text-sm">Total Request</p>
+                        <p className="text-sm">Confirmed</p>
                     </div>
                     <div className="flex bg-gray-200 text-black items-center border-l-5 border-yellow-400 px-3 py-5">
                         <p className="text-md text-center mr-2">200</p>
@@ -50,9 +106,30 @@ export default function EventList() {
                         <TabsTrigger className="ml-3 bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="draft">Draft</TabsTrigger>
                     </TabsList>
                     <TabsContent value="all">
-                        <div>
-                            asdad
-                        </div>
+                        <Table>
+                            <TableHeader>
+                                <TableRow>
+                                <TableHead className="w-[100px]">Organizer Name</TableHead>
+                                <TableHead>Event Name</TableHead>
+                                <TableHead>Event Type</TableHead>
+                                <TableHead>Status</TableHead>
+                                <TableHead>Date</TableHead>
+                                <TableHead> </TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                {invoices.map((invoice) => (
+                                <TableRow key={invoice.invoice}>
+                                    <TableCell className="font-medium">{invoice.invoice}</TableCell>
+                                    <TableCell>{invoice.paymentStatus}</TableCell>
+                                    <TableCell>{invoice.paymentMethod}</TableCell>
+                                    <TableCell>{invoice.paymentMethod}</TableCell>
+                                    <TableCell>{invoice.paymentMethod}</TableCell>
+                                    <TableCell className="text-right">{invoice.totalAmount}</TableCell>
+                                </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
                     </TabsContent>
                     <TabsContent value="published">
                         <div>
