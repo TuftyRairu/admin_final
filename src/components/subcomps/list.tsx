@@ -20,8 +20,8 @@ export default function EventList() {
     return (
         <Tabs defaultValue="events" className={cn(popp.variable,"font-sans")}>
             <TabsList className="border-0 bg-transparent">
-                <TabsTrigger className="data-[state=active]:border-b-2 rounded-none" value="events">Events</TabsTrigger>
-                <TabsTrigger className="ml-12 data-[state=active]:border-b-2 rounded-none" value="event_booking">Event Booking</TabsTrigger>
+                <TabsTrigger className="data-[state=active]:border-b-2 rounded-none text-[23px]" value="events">Events</TabsTrigger>
+                <TabsTrigger className="ml-12 data-[state=active]:border-b-2 rounded-none text-[23px]" value="event_booking">Event Booking</TabsTrigger>
             </TabsList>
             <TabsContent value="events">
                 <EventsTable />

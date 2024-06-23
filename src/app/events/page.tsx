@@ -6,14 +6,6 @@ import { Poppins } from "next/font/google"
 import EventsL from "@/components/eventsl";
 import { Input } from "@/components/ui/input";
 
-import { cn } from "@/lib/utils";
-
-const poppins = Poppins({
-    subsets: ['latin'],
-    variable: "--font-sans",
-    weight: "600",
-})
-
 export default function Events() {
     return (
         <>

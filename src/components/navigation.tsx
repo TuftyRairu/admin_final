@@ -1,4 +1,4 @@
-import SideBar from "@/components/web-comps/sidebar";
+import SideBar from "@/components/subcomps/sidebar";
 import Link from "next/link";
 import { Bell, Mail } from "lucide-react";
 import { Staatliches } from "next/font/google";

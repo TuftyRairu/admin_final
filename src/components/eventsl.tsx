@@ -1,4 +1,4 @@
-import EventList from "./web-comps/list";
+import EventList from "./subcomps/list";
 
 export default function EventsL() {
     return (
