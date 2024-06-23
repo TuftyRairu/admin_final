@@ -99,9 +99,15 @@ export default function EventList() {
                         <TabsTrigger className="ml-3 bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="published">Published</TabsTrigger>
                         <TabsTrigger className="ml-3 bg-white data-[state=active]:border-b-2 data-[state=active]:text-black rounded-none" value="draft">Draft</TabsTrigger>
                     </TabsList>
-                    <TabsContent value="all">Make changes to your account here.</TabsContent>
-                    <TabsContent value="published">Change your password here.</TabsContent>
-                    <TabsContent value="draft">asdasd.</TabsContent>
+                    <TabsContent value="all">
+                        Make changes to your account here.
+                    </TabsContent>
+                    <TabsContent value="published">
+                        Change your password here.
+                    </TabsContent>
+                    <TabsContent value="draft">
+                        asdasd.
+                    </TabsContent>
                 </Tabs>
             </TabsContent>
         </Tabs>
