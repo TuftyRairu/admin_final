@@ -1,4 +1,4 @@
-import SideBar from "@/components/sidebar/dashboardsidebar";
+import SideBar from "@/components/sidebar/sidebar";
 import Link from "next/link";
 import { Bell, Mail } from "lucide-react";
 import { Staatliches } from "next/font/google";

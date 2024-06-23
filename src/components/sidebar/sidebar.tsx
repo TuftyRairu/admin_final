@@ -19,7 +19,7 @@ import {
     SheetPortal
   } from "@/components/ui/sheet";
 import { useState } from "react";
-import { useRouter, usePathname } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 const staat = Staatliches({
     subsets: ['latin'],
@@ -28,10 +28,7 @@ const staat = Staatliches({
 })
 
 export default function SideBar() {
-    const [activeLink, setActiveLink] = useState();
-    const router = useRouter();
-    const pathname = usePathname();
-
+    const router = usePathname();
     return (
         <Sheet>
             <SheetTrigger className="cursor-pointer" asChild>
@@ -53,16 +50,8 @@ export default function SideBar() {
                 </SheetDescription>
             </SheetHeader>
             <div className="flex flex-col py-12 pr-12">
-                <Link href={"/dashboard"} className="flex rounded-md px-5 py-3 mb-4 text-black hover:bg-white">
-                    <LayoutDashboard /><a className={pathname == "/" ? "active" : "bg-yellow-500 "}>
-                        Dashboard
-                    </a>
-                </Link>
-                <Link href={"/events"} className="flex rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black">
-                    <Calendar /><a className={pathname == "/" ? "active" : "bg-yellow-500"}>
-                        events
-                    </a>
-                </Link>
+                <Link href={"/dashboard"} className={`flex rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black  ${router === '/dashboard' ? 'bg-yellow-500' : ''}`}><LayoutDashboard /><p className="ml-3">Dashboard</p></Link>
+                <Link href={"/events"} className={`flex rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black ${router === '/events' ? 'bg-yellow-500' : ''}`}><Calendar /><p className="ml-3">Events</p></Link>
                 <Link href={"/dashboard"} className="rounded-md px-5 py-3 mb-4 text-white hover:bg-white hover:text-black">Schedule</Link>
                 <Link href={"/dashboard"} className="rounded-md px-5 py-3 text-white hover:bg-white hover:text-black">Schedule</Link>
             </div>
