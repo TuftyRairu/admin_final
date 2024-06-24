@@ -13,7 +13,7 @@ const EventInput = React.forwardRef<HTMLInputElement, InputProps>(
         <input
             type={type}
             className={cn(
-            "flex text-black w-full create in h-12 border-input px-3 py-2 text-lg ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none",
+            "rounded-md flex text-black w-full create in h-12 border-input px-3 py-2 text-lg ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none",
             className
             )}
             ref={ref}

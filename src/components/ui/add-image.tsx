@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { cn } from "@/lib/utils"
 
-
-
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {}
 
@@ -51,7 +49,7 @@ const AddImage = React.forwardRef<HTMLInputElement, InputProps>(
                     </>
                 )}
             </label>
-            <input id="add-image" type="file" ref={fileInputRef} onChange={handleChange} accept="image/*" style={{ display: "none" }}/>
+            <input id="add-image" type={type} ref={fileInputRef} onChange={handleChange} accept="image/*" style={{ display: "none" }}/>
         </div>
       )
     }
