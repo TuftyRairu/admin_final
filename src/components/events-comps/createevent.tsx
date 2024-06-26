@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import EventForm from "@/components/subcomps/forms/createeventform";
+import EventForm from "@/components/events-comps/forms/createeventform";
 import { Poppins } from "next/font/google";
 
 import { cn } from "@/lib/utils"

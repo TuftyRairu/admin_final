@@ -3,7 +3,7 @@
 import NavigationBar from "@/components/navigation"
 import React from "react";
 import { Poppins } from "next/font/google"
-import EventsL from "@/components/eventsl";
+import EventsL from "@/components/events-comps/eventsl";
 import { Input } from "@/components/ui/input";
 
 export default function Events() {

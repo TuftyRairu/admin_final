@@ -4,7 +4,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="bg-admin-back bg-cover bg-bottom h-[100vh]">
+    <main className="bg-admin-back bg-cover bg-bottom h-[150vh]">
         {children}
     </main>
   );

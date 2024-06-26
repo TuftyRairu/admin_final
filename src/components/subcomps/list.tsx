@@ -9,8 +9,9 @@ const popp = Poppins({
     weight: "600",
 })
 
-import EventsTable from "./tables/eventstable";
-import EventBookingTable from "./tables/eventbookingtable";
+import Link from "next/link";
+import EventsTable from "../events-comps/tables/eventstable";
+import EventBookingTable from "../events-comps/tables/eventbookingtable";
 
 
 
@@ -23,7 +24,7 @@ export default function EventList() {
                 <TabsTrigger className="data-[state=active]:border-b-2 rounded-none text-[23px]" value="events">Events</TabsTrigger>
                 <TabsTrigger className="ml-12 data-[state=active]:border-b-2 rounded-none text-[23px]" value="event_booking">Event Booking</TabsTrigger>
                 <div className="ml-auto">
-                     <button className="p-2 bg-yellow-500 text-white rounded hover:bg-yellow-700">Create Event</button>
+                     <Link href="/create-event" className="p-2 bg-yellow-500 text-white rounded hover:bg-yellow-700">Create Event</Link>
                 </div>
             </TabsList>
             <TabsContent value="events">

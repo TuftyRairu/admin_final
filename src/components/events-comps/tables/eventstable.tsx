@@ -98,7 +98,6 @@ export default function EventsTable() {
                             <TableHead>Event Type</TableHead>
                             <TableHead>Status</TableHead>
                             <TableHead>Date</TableHead>
-                            <TableHead>Actions</TableHead>
                             <TableHead> </TableHead>
                             </TableRow>
                         </TableHeader>
@@ -110,9 +109,11 @@ export default function EventsTable() {
                                 <TableCell>{organizerName.eventType}</TableCell>
                                 <TableCell>{organizerName.status}</TableCell>
                                 <TableCell>{organizerName.date}</TableCell>
-                                <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
-                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
-                                <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
+                                <TableCell>
+                                    <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
+                                    <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
+                                    <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
+                                </TableCell>
                             </TableRow>
                             ))}
                         </TableBody>
@@ -138,9 +139,11 @@ export default function EventsTable() {
                                 <TableCell>{organizerName.eventType}</TableCell>
                                 <TableCell>{organizerName.status}</TableCell>
                                 <TableCell>{organizerName.date}</TableCell>
-                                <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
-                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
-                                <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
+                                <TableCell>
+                                    <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
+                                    <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
+                                    <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
+                                </TableCell>
                             </TableRow>
                             ))}
                         </TableBody>
@@ -150,12 +153,12 @@ export default function EventsTable() {
                     <Table>
                         <TableHeader>
                             <TableRow>
-                            <TableHead className="w-[300px]">Organizer Name</TableHead>
-                            <TableHead>Event Name</TableHead>
-                            <TableHead>Event Type</TableHead>
-                            <TableHead>Status</TableHead>
-                            <TableHead>Date</TableHead>
-                            <TableHead> </TableHead>
+                                <TableHead className="w-[300px]">Organizer Name</TableHead>
+                                <TableHead>Event Name</TableHead>
+                                <TableHead>Event Type</TableHead>
+                                <TableHead>Status</TableHead>
+                                <TableHead>Date</TableHead>
+                                <TableHead> </TableHead>
                             </TableRow>
                         </TableHeader>
                         <TableBody>
@@ -166,9 +169,11 @@ export default function EventsTable() {
                                 <TableCell>{organizerName.eventType}</TableCell>
                                 <TableCell>{organizerName.status}</TableCell>
                                 <TableCell>{organizerName.date}</TableCell>
-                                <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
-                                <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
-                                <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
+                                <TableCell>
+                                    <button className="bg-blue-600 hover:bg-blue-800 text-white py-1 px-2 rounded">View details</button>
+                                    <button className="bg-yellow-500 hover:bg-yellow-700 text-white py-1 px-2 rounded">Edit</button>
+                                    <button className="bg-red-600 hover:bg-red-800 text-white py-1 px-2 rounded">Delete</button>
+                                </TableCell>
                             </TableRow>
                             ))}
                         </TableBody>

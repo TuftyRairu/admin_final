@@ -1,5 +1,6 @@
 import NavigationBar from "@/components/navigation";
-import DashboardBodyOne from "@/components/dashboardbody1";
+import DashboardFirstSection from "@/components/dashboard-comps/firstsection";
+import DashboardSecondSection from "@/components/dashboard-comps/secondsection";
 import { Poppins } from "next/font/google";
 
 import { cn } from "@/lib/utils";
@@ -10,7 +11,7 @@ const popp = Poppins({
     weight: "500"
 })
 
-export default function Dashboards() {
+export default function Dashboard() {
     return (
         <>
             <NavigationBar  title="Dashboard" />
@@ -18,7 +19,8 @@ export default function Dashboards() {
                 <p className="text-2xl">Welcome, Admin</p>
                 <p className="text-sm">Have a good day!</p>
             </div>
-            <DashboardBodyOne />
+            <DashboardFirstSection />
+            <DashboardSecondSection />
         </>
     );
 }
